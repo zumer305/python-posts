@@ -1,0 +1,37 @@
+python -m django startproject core
+cd core
+python manage.py startapp accounts
+python manage.py startapp posts
+
+pip install djangorestframework
+pip install djangorestframework-simplejwt
+
+settings
+    'rest_framework',
+    'accounts',
+    'posts',
+
+
+settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+
+
+{
+  "username": "ali",
+  "password": "123"
+}
+
+
+
+
+
+run
+http://127.0.0.1:8000/api/accounts/signup/
+http://127.0.0.1:8000/api/token/
+access token http://127.0.0.1:8000/api/posts/create/
+http://127.0.0.1:8000/api/posts/update/1/
