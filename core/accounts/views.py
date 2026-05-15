@@ -14,5 +14,7 @@ def signup(request):
     )
 
     return Response({
-        "message": "User created successfully"
+        "message": "User created successfully",
+        "id": user.id,
+        "username": user.username
     })
